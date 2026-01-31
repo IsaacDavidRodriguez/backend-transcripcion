@@ -30,7 +30,7 @@ app.post('/transcribir', upload.single('audio'), async (req, res) => {
 
     const data = await response.json();
 
-    console.log(' Transcripción:', data.text); 
+    console.log(`🕒 ${new Date().toLocaleString()} | IP: ${req.ip} | Texto: ${data.text}`);
 
     res.json({ texto: data.text || 'No se pudo transcribir' });
 
